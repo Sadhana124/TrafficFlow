@@ -7,6 +7,7 @@ data = {
     title: 'Network FLow Query',
     availableAttributes : ['Destination ip', 'Destination vn', 'Direction ingress',
     'Destination port', 'Protocol', 'Source ip', 'Source vn', 'Source port', 'Sum of bytes', 'Sum of packets'],
+    conditions : ['=', '!=', '<', '>', '<=', '>=', 'in', 'like']
 }
 
 router.get('/', function(req, res, next) {

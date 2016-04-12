@@ -31,26 +31,57 @@
         <label for = "<%= availableAttributes[i]%>"><%= availableAttributes[i]%></label>
         </div>
         <% } %>
-        
+
+        <div class="form-group row">
+            <div class = "col-xs-3">
+                <label for="condAttrSelect">Select where attribute:</label>
+            </div>
+            <div class = "col-xs-3">
+                <label for="condSelect">Select conditon for the selected where attribute:</label>
+            </div>
+            <div class = "col-xs-3">
+                <label for="condValue">Value for the condition attribute:</label>
+            </div>
+            <div class = "col-xs-3">
+                <label for="condValue">Value for the condition to combne with next condition:</label>
+            </div>
+        </div>
 
         <div class="form-group row">
 
-          <div class = "col-xs-4">
-            <label for="condAttrSelect">Select where attribute:</label>
-            <select class="form-control" id="condAttrSelect" data-bind="options: availableAttributes"></select>
-          </div>
+            <div class = "col-xs-3">
 
-          <div class = "col-xs-4">
-            <label for="condSelect">Select conditon for the selected where attribute:</label>
-            <select class="form-control" id="condSelect" data-bind="options: conditions"></select>
-          </div>
+                <select name="cars" class = "form-control">
+                    <% for(var i=0; i<availableAttributes.length; i++) { %>
+                    <option value=<%= availableAttributes[i]%>><%= availableAttributes[i]%></option>
+                    <% } %>
+                </select>
+            </div>
 
-          <div class = "col-xs-4">
-            <label for="condValue">Value for the condition attribute:</label>
-            <input type="text" class="form-control" id="condValue" data-bind="value: toTime">
-          </div>
+            <div class = "col-xs-3">
+
+                <select name="cars" class = "form-control">
+                    <% for(var i=0; i<conditions.length; i++) { %>
+                    <option value=<%= conditions[i]%>><%= conditions[i]%></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class = "col-xs-3">
+                <input type="text" class="form-control" id="condValue" data-bind="value: toTime">
+            </div>
+
+            <div class = "col-xs-3">
+                <select name="cars" class = "form-control">
+                    <option value="AND">AND</option>
+                    <option value="OR">OR</option>
+                </select>
+            </div>
 
         </div>
+
+
+
         </div>
 
         </form>
