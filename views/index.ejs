@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css">
     <script type="text/javascript" src="/scripts/knockout-3.4.0.js" ></script>
     <script type="text/javascript" src="/scripts/jquery-1.12.3.min.js"></script>
-      <script type="text/javascript" src="index.js"></script>
+      <script type="text/javascript" src="/scripts/renderDynamicRow.js"></script>
   </head>
   <body>
     <h1><%= title %></h1>
@@ -13,7 +13,7 @@
 
 
       <form action="/query" method="post">
-    <div class="container">
+    <div class="container" id="formContainer">
         <div class = "row form-group">
           <div class="col-xs-6">
             <label for="from">From:</label>
@@ -46,6 +46,10 @@
                 <label>Value for the condition to combne with next condition:</label>
             </div>
         </div>
+
+        <div id="whereClauseSelection">
+
+
 
         <div class="form-group row">
 
@@ -112,6 +116,10 @@
                     <option value="OR">OR</option>
                 </select>
             </div>
+
+        </div>
+
+        <input type="button" onclick="addRow()">Add another where condition</input>
 
         </div>
 

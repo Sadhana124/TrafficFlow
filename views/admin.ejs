@@ -7,5 +7,33 @@
 <body>
 <h1><%= title %></h1>
 <p>Welcome to <%= title %></p>
+
+<h1> Insert Data </h1>
+
+<form action="/admin/insert" method="post">
+    TimeStamp <input type="text" name="timestmp">
+    </br>
+    DestinationIP <input type="text" name="dest_ip">
+    </br>
+    DestinationVN <input type="text" name="dest_vn">
+    </br>
+    DirectionIngress <input type="text" name="dir_ingress">
+    </br>
+    DestinationPort <input type="text" name="dest_port">
+    </br>
+    Protocol <input type="text" name="protocol">
+    </br>
+    SourceIP <input type="text" name="source_ip">
+    </br>
+    SourceVN <input type="text" name="source_vn">
+    </br>
+    SourcePort <input type="text" name="source_port">
+    </br>
+    SumBytesKB <input type="text" name="sum_bytes_kb">
+    </br>
+    SumPackets <input type="text" name="sum_packets">
+    </br>
+    <input type="submit">
+</form>
 </body>
 </html>
