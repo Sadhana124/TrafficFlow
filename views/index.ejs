@@ -2,10 +2,57 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css">
+    <script type="text/javascript" src="/scripts/knockout-3.4.0.js" ></script>
+    <script type="text/javascript" src="/scripts/jquery-1.12.3.min.js"></script>
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+
+      <form action="http://127.0.0.1:3000/myaction" method="post">
+    <div class="container">
+        <div class = "row form-group">
+          <div class="col-xs-6">
+            <label for="from">From:</label>
+            <input type="text" class="form-control" id="from" data-bind="value: fromTime">
+          </div>
+          <div class="col-xs-6">
+            <label for="to">To:</label>
+            <input type="text" class="form-control" id="to" data-bind="value: toTime">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="attrSelect">Select fields to be displayed:</label>
+          <select class="form-control" id="attrSelect" data-bind="options: availableAttributes, selectedOptions: chosenAttributes"
+                  multiple="true"></select>
+        </div>
+
+        <div class="form-group row">
+
+          <div class = "col-xs-4">
+            <label for="condAttrSelect">Select where attribute:</label>
+            <select class="form-control" id="condAttrSelect" data-bind="options: availableAttributes"></select>
+          </div>
+
+          <div class = "col-xs-4">
+            <label for="condSelect">Select conditon for the selected where attribute:</label>
+            <select class="form-control" id="condSelect" data-bind="options: conditions"></select>
+          </div>
+
+          <div class = "col-xs-4">
+            <label for="condValue">Value for the condition attribute:</label>
+            <input type="text" class="form-control" id="condValue" data-bind="value: toTime">
+          </div>
+
+        </div>
+
+        </form>
+      </>
+
+
+
   </body>
 </html>
