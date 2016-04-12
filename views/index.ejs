@@ -17,17 +17,17 @@
         <div class = "row form-group">
           <div class="col-xs-6">
             <label for="from">From:</label>
-            <input type="text" class="form-control" id="from">
+            <input type="text" class="form-control" name="from">
           </div>
           <div class="col-xs-6">
             <label for="to">To:</label>
-            <input type="text" class="form-control" id="to">
+            <input type="text" class="form-control" name="to">
           </div>
         </div>
 
         <% for(var i=0; i<availableAttributes.length; i++) { %>
         <div class = "col-xs-6">
-        <input type="checkbox" id = "<%= availableAttributes[i]%>">
+        <input type="checkbox" name = "<%= availableAttributes[i]%>">
         <label for = "<%= availableAttributes[i]%>"><%= availableAttributes[i]%></label>
         </div>
         <% } %>
@@ -51,7 +51,7 @@
 
             <div class = "col-xs-3">
 
-                <select id="condAttr-1" class = "form-control">
+                <select name="condAttr-1" class = "form-control">
                     <% for(var i=0; i<availableAttributes.length; i++) { %>
                     <option value=<%= availableAttributes[i]%>><%= availableAttributes[i]%></option>
                     <% } %>
@@ -68,7 +68,7 @@
             </div>
 
             <div class = "col-xs-3">
-                <input type="text" class="form-control" id="condValue-1" data-bind="value: toTime">
+                <input type="text" class="form-control" name="condValue-1" data-bind="value: toTime">
             </div>
 
             <div class = "col-xs-3">
@@ -86,7 +86,7 @@
 
             <div class = "col-xs-3">
 
-                <select id="condAttr-2" class = "form-control">
+                <select name="condAttr-2" class = "form-control">
                     <% for(var i=0; i<availableAttributes.length; i++) { %>
                     <option value=<%= availableAttributes[i]%>><%= availableAttributes[i]%></option>
                     <% } %>
@@ -103,7 +103,7 @@
             </div>
 
             <div class = "col-xs-3">
-                <input type="text" class="form-control" id="condValue-2" data-bind="value: toTime">
+                <input type="text" class="form-control" name="condValue-2" data-bind="value: toTime">
             </div>
 
             <div class = "col-xs-3">
