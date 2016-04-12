@@ -8,7 +8,7 @@
 
 
       <script>
-          var rowNum = 0;
+          var rowNum = 1;
           function addRow() {
               rowNum ++;
               var row =
@@ -121,40 +121,9 @@
 
         <!-- row 2 - needs to be dynamically added in future -->
 
-        <div class="form-group row">
 
-            <div class = "col-xs-3">
 
-                <select name="condAttr-2" class = "form-control">
-                    <% for(var i=0; i<availableAttributes.length; i++) { %>
-                    <option value=<%= availableAttributes[i]%>><%= availableAttributes[i]%></option>
-                    <% } %>
-                </select>
-            </div>
-
-            <div class = "col-xs-3">
-
-                <select name="op-2" class = "form-control">
-                    <% for(var i=0; i<conditions.length; i++) { %>
-                    <option value=<%= conditions[i]%>><%= conditions[i]%></option>
-                    <% } %>
-                </select>
-            </div>
-
-            <div class = "col-xs-3">
-                <input type="text" class="form-control" name="condValue-2" data-bind="value: toTime">
-            </div>
-
-            <div class = "col-xs-3">
-                <select name="combiner-2" class = "form-control">
-                    <option value="AND">AND</option>
-                    <option value="OR">OR</option>
-                </select>
-            </div>
-
-        </div>
-
-        <input type="button" onclick="addRow()" value="Add a where condition" class=row">
+        <input type="button" onclick="addRow()" value="Add another where condition" class=row">
 
         </div>
 
