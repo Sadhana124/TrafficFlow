@@ -16,6 +16,12 @@ router.get('/', function(req, res, next) {
     res.render('index', data);
 });
 
+router.post('/test', function(req, res)
+{
+    console.log("got the test psot request");
+    res.end('callback(\'{\"msg\": \"OK\"}\')');
+});
+
 router.post('/query', function(req, res) {
     //Move into common method
 

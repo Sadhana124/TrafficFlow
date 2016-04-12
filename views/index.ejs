@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css">
     <script type="text/javascript" src="/scripts/knockout-3.4.0.js" ></script>
     <script type="text/javascript" src="/scripts/jquery-1.12.3.min.js"></script>
+      <script type="text/javascript" src="/scripts/renderDynamicRow.js"></script>
 
 
       <script>
@@ -41,13 +42,49 @@
               $('#formContainer').append(row);
           }
       </script>
+
+      <!-- making ajax call -->
+      <!--<script>
+          $('#form_id').on('submit', function(e){
+              alert("going to make ajax call");
+              e.preventDefault();
+              $.ajax({
+                  type: "POST",
+                  url: "/test",
+                  data: $(this).serialize(),
+                  success: function() {
+                      alert('success');
+                  }
+              });
+          });
+      </script> -->
+
+      <script>
+
+
+          $( '#target' ).submit(function( event ) {
+              alert( "Handler for .submit() called." );
+              event.preventDefault();
+              return false;
+          });
+      </script>
+
+
+
+
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
+    <form id="target" action="destination.html">
+        <input type="text" value="Hello there">
+        <input type="submit" value="Go">
+        <button type="submit">go gog go</button>
+    </form>
 
-      <form action="/query" method="post">
+
+      <form action="/query" method="post" id="form_id">
     <div class="container" id="formContainer">
         <div class = "row form-group">
           <div class="col-xs-6">
@@ -127,9 +164,11 @@
 
         </div>
 
-        <input type="submit" value="Submit" class = "btn btn-default">
+        <!-- <input type="button" value="Submit" class = "btn btn-default" onclick="sendFormData()"> -->
+        <input type="submit" value="xyz" class = "btn btn-default">
 
-        </div>
+
+    </div>
 
         </form>
 
