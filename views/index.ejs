@@ -5,7 +5,42 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css">
     <script type="text/javascript" src="/scripts/knockout-3.4.0.js" ></script>
     <script type="text/javascript" src="/scripts/jquery-1.12.3.min.js"></script>
-      <script type="text/javascript" src="/scripts/renderDynamicRow.js"></script>
+
+
+      <script>
+          var rowNum = 0;
+          function addRow() {
+              rowNum ++;
+              var row =
+                      '<div class="form-group row"> ' +
+                      '<div class = "col-xs-3"> ' +
+
+                      '<select name="condAttr-' + rowNum + '"class="form-control">' +
+                      '<% for(i=0 ; i<availableAttributes.length; i++) { %>' +
+                      '<option value=<%= availableAttributes[i]%>><%= availableAttributes[i]%></option>' +
+                      '<% } %>  </select>' +
+                      '</div> ' +
+                      '<div class = "col-xs-3"> ' +
+                      '<select name="op-'+rowNum+'" class = "form-control"> ' +
+                      '<% for(var i=0; i<conditions.length; i++) { %>' +
+
+                      '<option value=<%= conditions[i]%>><%= conditions[i]%></option>' +
+                      '<% } %>' +
+                      '</select> ' +
+                      '</div> ' +
+                      '<div class = "col-xs-3"> ' +
+                      '<input type="text" class="form-control" name="condValue-' +rowNum+'"> ' +
+                      '</div> ' +
+                      '<div class = "col-xs-3"> ' +
+                      '<select name="combiner-'+rowNum+'" class = "form-control">' +
+                      '<option value="AND">AND</option> ' +
+                      '<option value="OR">OR</option> ' +
+                      '</select> ' +
+                      '</div>' +
+                      '</div>';
+              $('#formContainer').append(row);
+          }
+      </script>
   </head>
   <body>
     <h1><%= title %></h1>
@@ -119,7 +154,7 @@
 
         </div>
 
-        <input type="button" onclick="addRow()">Add another where condition</input>
+        <input type="button" onclick="addRow()" value="Add a where condition" class=row">
 
         </div>
 
