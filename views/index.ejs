@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css">
     <script type="text/javascript" src="/scripts/knockout-3.4.0.js" ></script>
     <script type="text/javascript" src="/scripts/jquery-1.12.3.min.js"></script>
+      <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
     <h1><%= title %></h1>
@@ -16,19 +17,21 @@
         <div class = "row form-group">
           <div class="col-xs-6">
             <label for="from">From:</label>
-            <input type="text" class="form-control" id="from" data-bind="value: fromTime">
+            <input type="text" class="form-control" id="from">
           </div>
           <div class="col-xs-6">
             <label for="to">To:</label>
-            <input type="text" class="form-control" id="to" data-bind="value: toTime">
+            <input type="text" class="form-control" id="to">
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="attrSelect">Select fields to be displayed:</label>
-          <select class="form-control" id="attrSelect" data-bind="options: availableAttributes, selectedOptions: chosenAttributes"
-                  multiple="true"></select>
+        <% for(var i=0; i<availableAttributes.length; i++) { %>
+        <div class = "col-xs-6">
+        <input type="checkbox" id = "<%= availableAttributes[i]%>">
+        <label for = "<%= availableAttributes[i]%>"><%= availableAttributes[i]%></label>
         </div>
+        <% } %>
+        
 
         <div class="form-group row">
 
@@ -48,9 +51,9 @@
           </div>
 
         </div>
+        </div>
 
         </form>
-      </>
 
 
 
