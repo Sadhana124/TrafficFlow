@@ -135,6 +135,8 @@ function sendFormData(data) {
                 parent.removeChild(child);
             }*/
 
+            $("#resultTable").remove();
+
 
             //table creation starts here
 
@@ -171,7 +173,7 @@ function sendFormData(data) {
             document.body.appendChild(table);
 
             //$(document).ready( function () {
-                $('#resultTable').DataTable();
+                //$('#resultTable').DataTable();
             //} );
             /*var para = document.createElement("resultDiv");
             //var node = document.createTextNode("This is new.");
