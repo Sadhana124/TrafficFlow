@@ -29,6 +29,7 @@ app.use('/admin', admin);
 app.use('/scripts', express.static(__dirname+ '/public/javascripts/'))
 app.use('/bootstrap', express.static(__dirname+ '/public/stylesheets/bootstrap/'))
 app.use('/modules', express.static(__dirname+ '/node_modules/'))
+app.use('/styles', express.static(__dirname+ '/public/stylesheets/'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

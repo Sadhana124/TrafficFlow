@@ -71,16 +71,25 @@ router.post('/query', function(req, res) {
         query += '*'
     }
 
+    if (params['from'] == "") {
+        var errorMsg = {"error" :"Enter from timestamp value"};
+        res.json(errorMsg);
+    }
     query += " FROM traffic WHERE " + "ts > " + params['from'] + " AND ts < " + params['to'];
 
-    for (var i = 0; i < params['whereConditions'].length; i++) {
-        params['whereConditions'][i]['condAttr'] = mapping[params['whereConditions'][i]['condAttr']];
+    // check if any conditons added
+    if ('whereConditions' in params) {
 
-        query += " " +
-            params['whereConditions'][i]['combiner'] + " " +
-            params['whereConditions'][i]['condAttr'] + " " +
-            params['whereConditions'][i]['op'] + " " +
-            params['whereConditions'][i]['condValue'];
+        for (var i = 0; i < params['whereConditions'].length; i++) {
+            params['whereConditions'][i]['condAttr'] = mapping[params['whereConditions'][i]['condAttr']];
+
+            query += " " +
+                params['whereConditions'][i]['combiner'] + " " +
+                params['whereConditions'][i]['condAttr'] + " " +
+                params['whereConditions'][i]['op'] + " " +
+                params['whereConditions'][i]['condValue'];
+        }
+
     }
 
     db.all(query, function(err, rows) {
