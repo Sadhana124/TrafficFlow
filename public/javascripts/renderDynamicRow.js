@@ -119,7 +119,9 @@ function sendFormData(data) {
         var x = document.getElementById("formContainer");
 
         var from = document.getElementsByName("from")[0];
-        query["from"] = from.value;
+        var parts = from.value.match(/(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/);
+        var fromDate = Date.UTC(+parts[3], parts[2]-1, +parts[1], +parts[4], +parts[5]);
+        query["from"] = fromDate;
         var to = document.getElementsByName("to")[0];
         query["to"] = to.value;
         var selectedAttrs = [];

@@ -30,6 +30,7 @@ app.use('/scripts', express.static(__dirname+ '/public/javascripts/'))
 app.use('/bootstrap', express.static(__dirname+ '/public/stylesheets/bootstrap/'))
 app.use('/modules', express.static(__dirname+ '/node_modules/'))
 app.use('/styles', express.static(__dirname+ '/public/stylesheets/'))
+app.use('/datatimepicker', express.static(__dirname+ '/dateTimePicker/'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
