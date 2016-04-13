@@ -2,49 +2,8 @@
  * Created by SadhanaRamachandran on 4/12/16.
  */
 
-
-var rowNum = 0;
-function addRow(frm) {
-    rowNum ++;
-    var row =
-        '<div class="form-group row"> ' +
-            '<div class = "col-xs-3"> ' +
-
-        '<select id="row' + rowNum + '">' +
-        '<% for(i=0 ; i<availableAttributes.length; i++) { %>' +
-        '<option value=<%= availableAttributes[i]%>><%= availableAttributes[i]%></option>' +
-        '<% } %>  </select>' +
-'</div> ' +
-        '<div class = "col-xs-3"> ' +
-        '<select name="op-1" class = "form-control"> ' +
-        '<% for(var i=0; i<conditions.length; i++) { %>' +
-
- '<option value=<%= conditions[i]%>><%= conditions[i]%></option>' +
-            '<% } %>' +
-'</select> ' +
-        '</div> ' +
-        '<div class = "col-xs-3"> ' +
-        '<input type="text" class="form-control" name="condValue-1"> ' +
-        '</div> ' +
-        '<div class = "col-xs-3"> ' +
-        '<select name="combiner-1" class = "form-control">' +
-        '<option value="AND">AND</option> ' +
-        '<option value="OR">OR</option> ' +
-        '</select> ' +
-        '</div>' +
-'</div>';
-
-
-    var row2 = '<div class="form-group row"><div class = "col-xs-3"><select name=“condAttr-1" class = "form-control"><% for(var i=0; i<availableAttributes.length; i++) { %><option value=<%= availableAttributes[i]%>><%= availableAttributes[i]%></option><% } %></select></div><div class = "col-xs-3"><select name="op-1" class = "form-control"><% for(var i=0; i<conditions.length; i++) { %><option value=<%= conditions[i]%>><%= conditions[i]%></option><% } %></select></div><div class = "col-xs-3"><input type="text" class="form-control" name="condValue-1" data-bind="value: toTime"></div><div class = "col-xs-3"><select name="combiner-1" class = "form-control"><option value="AND">AND</option><option value=“OR">OR</option></select></div></div>';
-
-
-
-    jQuery('#formContainer').append(row2);
-}
-
 var availableAttributes = ['Destination_ip', 'Destination_vn', 'Direction_ingress',
     'Destination_port', 'Protocol', 'Source_ip', 'Source_vn', 'Source_port', 'Sum_of_bytes', 'Sum_of_packets'];
-
 
 
 $(document).ready(function () {
@@ -119,11 +78,15 @@ function sendFormData(data) {
         var x = document.getElementById("formContainer");
 
         var from = document.getElementsByName("from")[0];
-        var parts = from.value.match(/(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/);
-        var fromDate = Date.UTC(+parts[3], parts[2]-1, +parts[1], +parts[4], +parts[5]);
-        query["from"] = fromDate;
+        var datestring = from.value;
+        var parts = datestring.match(/(\d{4})\/(\d{2})\/(\d{2}) (\d{2}):(\d{2})/);
+        var dateEpo = Date.UTC(+parts[1], parts[2]-1, +parts[3], +parts[4], +parts[5]);
+        query["from"] = dateEpo;
         var to = document.getElementsByName("to")[0];
-        query["to"] = to.value;
+        datestring = to.value;
+        parts = datestring.match(/(\d{4})\/(\d{2})\/(\d{2}) (\d{2}):(\d{2})/);
+        dateEpo = Date.UTC(+parts[1], parts[2]-1, +parts[3], +parts[4], +parts[5]);
+        query["to"] = dateEpo;
         var selectedAttrs = [];
         for (var i=0; i<availableAttributes.length; i++) {
             if (document.getElementById(availableAttributes[i]).checked == true) {
