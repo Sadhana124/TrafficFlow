@@ -75,6 +75,13 @@ $(document).ready(function () {
 
 });
 
+function clearAllWhereConditions() {
+    var myNode = document.getElementById("whereConds");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
+}
+
 function validate() {
 
     $("#resultTable").remove();
@@ -184,10 +191,19 @@ function sendFormData(data) {
 
 
                 var ret = jQuery.parseJSON(data);
-
-                if ('error' in data) {
-                    alert("got error")
+                if (data == "[]") {
+                    $("#resultTable").remove();
+                    var ele = document.getElementById("errorLabel");
+                    (document.getElementById("errorMsgDiv")).style.visibility = 'visible';
+                    ele.innerHTML = "The query you constructed returned no rows.";
                 }
+
+                /*if ('error' in data) {
+
+
+
+                    alert("got error")
+                }*/
                 //alert(ret);
                 //$('#lblResponse').html(ret.msg);
 
@@ -254,7 +270,11 @@ function sendFormData(data) {
                  para.appendChild(table);*/
             },
             error: function (xhr, status, error) {
-                alert("error");
+                //alert("error");
+                $("#resultTable").remove();
+                var ele = document.getElementById("errorLabel");
+                (document.getElementById("errorMsgDiv")).style.visibility = 'visible';
+                ele.innerHTML = "The query you constructed is invalid. Please try again";
                 //console.log('Error: ' + error.message);
                 //$('#lblResponse').html('Error connecting to the server.');
             }

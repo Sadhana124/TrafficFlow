@@ -42,7 +42,7 @@
                       '</select> ' +
                       '</div>' +
                       '</div>';
-              $('#formContainer').append(row);
+              $('#whereConds').append(row);
           }
       </script>
 
@@ -115,42 +115,12 @@
 
             <div class = "row form-group">
             <input type="button" onclick="addRow()" value="Add where condition" class="btn btn-primary">
+                <input type="button" onclick="clearAllWhereConditions()" value="Clear where conditions" class="btn btn-primary">
             </div>
 
-        <!-- <div class="form-group row">
+            <div id="whereConds"></div>
 
-            <div class = "col-xs-3">
 
-                <select name="condAttr-1" id = "condAttr-1" class = "form-control">
-                    <% for(var i=0; i<availableAttributes.length; i++) { %>
-                    <option value=<%= availableAttributes[i]%>><%= availableAttributes[i]%></option>
-                    <% } %>
-                </select>
-            </div>
-
-            <div class = "col-xs-3">
-
-                <select name="op-1" id="op-1" class = "form-control">
-                    <% for(var i=0; i<conditions.length; i++) { %>
-                    <option value=<%= conditions[i]%>><%= conditions[i]%></option>
-                    <% } %>
-                </select>
-            </div>
-
-            <div class = "col-xs-3">
-                <input type="text" class="form-control" name="condValue-1" id="condValue-1" data-bind="value: toTime">
-            </div>
-
-            <div class = "col-xs-3">
-                <select name="combiner-1" id="combiner-1" class = "form-control">
-                    <option value="AND">AND</option>
-                    <option value="OR">OR</option>
-                </select>
-            </div>
-
-        </div> -->
-
-        <!-- row 2 - needs to be dynamically added in future -->
 
 
 
