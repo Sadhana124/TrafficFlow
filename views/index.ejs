@@ -6,8 +6,8 @@
     <script type="text/javascript" src="/scripts/knockout-3.4.0.js" ></script>
     <script type="text/javascript" src="/scripts/jquery-1.12.3.min.js"></script>
       <script type="text/javascript" src="/scripts/renderDynamicRow.js"></script>
-      <script src="/scripts/jQueryDateTimePicker/jquery.js"></script>
-      <script src="/scripts/jQueryDateTimePicker/build/jquery.datetimepicker.full.js"></script>
+      <script scr="/node_modules/datatables.net/js/jquery.dataTable.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="/node_modules/datatables.net-dt/css/jquery.dataTables.css" type="text/css">
 
 
       <script>
@@ -166,9 +166,10 @@
     <input type="button" value="Submit" class = "form-control" onclick="sendFormData()">
 </div>
 
-  <div>
-      <input type="text" data-bind="value:queryResult">
+  <div id="resultDiv">
+
   </div>
+
 
 
 

@@ -2,6 +2,13 @@
  * Created by SadhanaRamachandran on 4/12/16.
  */
 
+/*var $       = require( 'jquery' );
+var dt      = require( 'datatables.net-dt' )();
+var buttons = require( 'datatables.net-buttons-dt' )();
+var $       = require( 'jquery' );
+var dt      = require( 'datatables.net-dt' )( window, $ );
+var buttons = require( 'datatables.net-buttons-dt' )( window, $ );*/
+
 var rowNum = 0;
 function addRow(frm) {
     rowNum ++;
@@ -118,12 +125,32 @@ function sendFormData(data) {
 //jsonpCallback: 'callback' - removed
         success: function (data) {
             var ret = jQuery.parseJSON(data);
-            alert(ret);
+            //alert(ret);
             //$('#lblResponse').html(ret.msg);
 
+            //remove existing table
+            /*var parent = document.getElementById("resultDiv");
+            var child = document.getElementById("resultTable");
+            if (child != null) {
+                parent.removeChild(child);
+            }*/
+
+
             //table creation starts here
-            /*var json = ret,
+
+            var json = ret,
                 table = document.createElement('table');
+            table.id = "resultTable";
+
+            var headerRow = document.createElement('tr');
+            var th;
+            for (var key in json[0]) {
+                th = document.createElement('th');
+                th.appendChild(document.createTextNode(key));
+                headerRow.appendChild(th);
+            }
+
+            table.appendChild(headerRow);
 
             for(var i = 0, il = json.length; i < il; ++i) {
                 //create row
@@ -141,7 +168,14 @@ function sendFormData(data) {
                 table.appendChild(row);
             }
 
-            document.body.appendChild(table);*/
+            document.body.appendChild(table);
+
+            //$(document).ready( function () {
+                $('#resultTable').DataTable();
+            //} );
+            /*var para = document.createElement("resultDiv");
+            //var node = document.createTextNode("This is new.");
+            para.appendChild(table);*/
         },
         error: function (xhr, status, error) {
             alert("error");

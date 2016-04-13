@@ -62,7 +62,7 @@ router.post('/query', function(req, res) {
 
     var query = 'SELECT ';
     for (var i = 0; i < params['selectedAttr'].length; i++) {
-        params['selectedAttr'][i] = mapping[params['selectedAttr'][i]];
+        params['selectedAttr'][i] = mapping[params['selectedAttr'][i]] + ' AS ' + params['selectedAttr'][i];
     }
 
     if('selectedAttr' in params) {
