@@ -129,5 +129,18 @@ function sendFormData(data) {
     });
 }
 
+/*var displayResult = function
+
+$(document).ready(function () {
+
+    //ko.applyBindings(viewmodel);
+    //ko.applyBindings(new ViewModel("Planet", "Earth"));
+    ko.applyBindings(new displayResult());
+
+
+
+
+});*/
+
 
 
