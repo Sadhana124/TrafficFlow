@@ -88,10 +88,13 @@ function sendFormData(data) {
     query["selectedAtts"] = selectedAttrs;
 
     var whereClauses = []
-
-    for (var i=1; i<=2; i++) {
+    var i=1;
+    while (1) {
         var whereClause = {}
         var condAttr = document.getElementById("condAttr-"+i);
+        if (condAttr == null) {
+            break;
+        }
         whereClause["condAttrt"] = condAttr.value;
         var op = document.getElementById("op-"+i);
         whereClause["op"] = op.value;
@@ -101,6 +104,7 @@ function sendFormData(data) {
         whereClause["combiner"] = combiner.value;
 
         whereClauses.push(whereClause);
+        i++;
     }
 
     query["whereConditions"] = whereClauses;
@@ -108,8 +112,8 @@ function sendFormData(data) {
 
     $.ajax({
         type: 'POST', // added,
-        url: '/test',
-        data: '{"data": "TEST"}',
+        url: '/query',
+        data: query,
 //dataType: 'jsonp' - removed
 //jsonpCallback: 'callback' - removed
         success: function (data) {
