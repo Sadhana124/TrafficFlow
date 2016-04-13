@@ -34,29 +34,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+            <state relative-caret-position="329">
+              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="renderDynamicRow.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="renderDynamicRow.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/renderDynamicRow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="78" column="52" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="52" />
+            <state relative-caret-position="585">
+              <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
               <folding>
                 <element signature="e#0#53#0" expanded="false" />
-                <marker date="1460548247000" expanded="true" signature="160:1051" placeholder="..." />
-                <marker date="1460548247000" expanded="true" signature="160:1074" placeholder="..." />
-                <marker date="1460548247000" expanded="true" signature="160:1094" placeholder="..." />
-                <marker date="1460548247000" expanded="true" signature="160:1095" placeholder="..." />
-                <marker date="1460548247000" expanded="true" signature="899:1051" placeholder="..." />
-                <marker date="1460548247000" expanded="true" signature="962:1051" placeholder="..." />
+                <marker date="1460548448000" expanded="true" signature="160:1051" placeholder="..." />
+                <marker date="1460548448000" expanded="true" signature="160:1074" placeholder="..." />
+                <marker date="1460548448000" expanded="true" signature="160:1094" placeholder="..." />
+                <marker date="1460548448000" expanded="true" signature="160:1095" placeholder="..." />
+                <marker date="1460548448000" expanded="true" signature="899:1051" placeholder="..." />
+                <marker date="1460548448000" expanded="true" signature="962:1051" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -128,8 +128,8 @@
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/views/admin.ejs" />
-        <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/renderDynamicRow.js" />
+        <option value="$PROJECT_DIR$/views/index.ejs" />
       </list>
     </option>
   </component>
@@ -364,12 +364,12 @@
       <option name="presentableId" value="Default" />
       <updated>1460430311040</updated>
       <workItem from="1460430313430" duration="13121000" />
-      <workItem from="1460484988434" duration="36861000" />
+      <workItem from="1460484988434" duration="37199000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49982000" />
+    <option name="totallyTimeSpent" value="50320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -471,12 +471,12 @@
           <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
           <folding>
             <element signature="e#0#53#0" expanded="false" />
-            <marker date="1460548247000" expanded="true" signature="160:1051" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="160:1074" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="160:1094" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="160:1095" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="899:1051" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="962:1051" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="160:1051" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="160:1074" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="160:1094" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="160:1095" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="899:1051" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="962:1051" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -553,27 +553,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.ejs">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/renderDynamicRow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="585">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#53#0" expanded="false" />
+            <marker date="1460548448000" expanded="true" signature="160:1051" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="160:1074" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="160:1094" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="160:1095" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="899:1051" placeholder="..." />
+            <marker date="1460548448000" expanded="true" signature="962:1051" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/renderDynamicRow.js">
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="78" column="52" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#53#0" expanded="false" />
-            <marker date="1460548247000" expanded="true" signature="160:1051" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="160:1074" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="160:1094" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="160:1095" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="899:1051" placeholder="..." />
-            <marker date="1460548247000" expanded="true" signature="962:1051" placeholder="..." />
-          </folding>
+        <state relative-caret-position="329">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -46,23 +46,6 @@
           }
       </script>
 
-      <!-- making ajax call -->
-      <!--<script>
-          $('#form_id').on('submit', function(e){
-              alert("going to make ajax call");
-              e.preventDefault();
-              $.ajax({
-                  type: "POST",
-                  url: "/test",
-                  data: $(this).serialize(),
-                  success: function() {
-                      alert('success');
-                  }
-              });
-          });
-      </script> -->
-
-
 
   </head>
   <body>
@@ -92,20 +75,6 @@
         </div>
         <% } %>
 
-        <!--<div class="form-group row">
-            <div class = "col-xs-3">
-                <label>Select where attribute:</label>
-            </div>
-            <div class = "col-xs-3">
-                <label>Select conditon for the selected where attribute:</label>
-            </div>
-            <div class = "col-xs-3">
-                <label>Value for the condition attribute:</label>
-            </div>
-            <div class = "col-xs-3">
-                <label>Value for the condition to combne with next condition:</label>
-            </div>
-        </div> -->
 
         <div class=""form-group row>
             <label>Select where conditons as needed</label>
@@ -120,16 +89,10 @@
 
             <div id="whereConds"></div>
 
-
-
-
-
        <!-- <input type="button" onclick="addRow()" value="Add another where condition" class=row"> -->
 
         </div>
 
-
-        <!--<input type="submit" value="xyz" class = "btn btn-default">-->
 
 
     </div>
@@ -148,9 +111,6 @@
   <div id="resultDiv">
 
   </div>
-
-
-
 
   </body>
 </html>

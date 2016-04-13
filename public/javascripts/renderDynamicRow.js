@@ -40,39 +40,15 @@ function addRow(frm) {
 
 
     jQuery('#formContainer').append(row2);
-    //frm.add_qty.value = '';
-    //frm.add_name.value = '';
 }
 
 var availableAttributes = ['Destination_ip', 'Destination_vn', 'Direction_ingress',
     'Destination_port', 'Protocol', 'Source_ip', 'Source_vn', 'Source_port', 'Sum_of_bytes', 'Sum_of_packets'];
 
-/*$( '#target' ).submit(function( event ) {
-    alert( "Handler for .submit() called." );
-    event.preventDefault();
-    return false;
-});*/
 
-/*$('#form_id').on('submit', function(e){
-    e.preventDefault();
-    $.ajax({
-        type: 'POST',
-        url: "/test",
-        data: $(this).serialize(),
-        success: function() {
-            alert('success');
-        }
-    });
-    return false;
-});*/
 
 $(document).ready(function () {
-
-
     (document.getElementById("errorMsgDiv")).style.visibility = 'hidden';
-
-
-
 });
 
 function clearAllWhereConditions() {
@@ -140,9 +116,6 @@ function sendFormData(data) {
 
     if (validate()) {
         var query = {}
-        //document.write("reached js handler");
-        //document.write(data);
-        //alert("hi");
         var x = document.getElementById("formContainer");
 
         var from = document.getElementsByName("from")[0];
@@ -184,8 +157,6 @@ function sendFormData(data) {
             type: 'POST', // added,
             url: '/query',
             data: query,
-
-//jsonpCallback: 'callback' - removed
             success: function (data) {
 
 
@@ -197,22 +168,6 @@ function sendFormData(data) {
                     (document.getElementById("errorMsgDiv")).style.visibility = 'visible';
                     ele.innerHTML = "The query you constructed returned no rows.";
                 }
-
-                /*if ('error' in data) {
-
-
-
-                    alert("got error")
-                }*/
-                //alert(ret);
-                //$('#lblResponse').html(ret.msg);
-
-                //remove existing table
-                /*var parent = document.getElementById("resultDiv");
-                 var child = document.getElementById("resultTable");
-                 if (child != null) {
-                 parent.removeChild(child);
-                 }*/
 
                 $("#resultTable").remove();
 
@@ -254,54 +209,20 @@ function sendFormData(data) {
                         row.appendChild(td);
                     }
 
-
-
                     table.appendChild(row);
                 }
                 //table.appendChild(tbodyE);
 
                 document.body.appendChild(table);
 
-                //$(document).ready( function () {
-                //$('#resultTable').DataTable();
-                //} );
-                /*var para = document.createElement("resultDiv");
-                 //var node = document.createTextNode("This is new.");
-                 para.appendChild(table);*/
             },
             error: function (xhr, status, error) {
-                //alert("error");
                 $("#resultTable").remove();
                 var ele = document.getElementById("errorLabel");
                 (document.getElementById("errorMsgDiv")).style.visibility = 'visible';
                 ele.innerHTML = "The query you constructed is invalid. Please try again";
-                //console.log('Error: ' + error.message);
-                //$('#lblResponse').html('Error connecting to the server.');
             }
         });
     }
-
-
-
-
 }
-
-/*var displayResult = function() {
-    var self = this;
-    this.result =
-
-}
-
-$(document).ready(function () {
-
-    //ko.applyBindings(viewmodel);
-    //ko.applyBindings(new ViewModel("Planet", "Earth"));
-    ko.applyBindings(new displayResult());
-
-
-
-
-});*/
-
-
 
