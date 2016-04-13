@@ -149,7 +149,7 @@ router.post('/insert', function(req, res) {
     var dest_port = req.body.dest_port;
     var protocol = req.body.protocol;
     var source_ip = req.body.source_ip;
-    var source_vn = req.body.souce_vn;
+    var source_vn = req.body.source_vn;
     var source_port = req.body.source_port;
     var sum_bytes_kb = req.body.sum_bytes_kb;
     var sum_packets = req.body.sum_packets;
