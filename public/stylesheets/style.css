@@ -20,8 +20,7 @@ tr { border: solid; border-width: 1px; padding: 10px; text-align: center}
 th { border-left: solid; border-width: 1px 1px; padding: 10px; text-align: center }
 td { border-left: solid; border-width: 1px 1px; padding: 10px; text-align: center}
 
-#whereLabel {
-  padding-top: 10px;
-  margin-top: 10px;
+#selAttr {
+  height: 100px;
 }
 
