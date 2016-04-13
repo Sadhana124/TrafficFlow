@@ -22,5 +22,6 @@ td { border-left: solid; border-width: 1px 1px; padding: 10px; text-align: cente
 
 #whereLabel {
   padding-top: 10px;
+  margin-top: 10px;
 }
 

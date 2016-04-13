@@ -63,6 +63,10 @@
           </div>
         </div>
 
+            <div class="form-group row">
+                <label>Select the attributes to be retrieved</label>
+         </div>
+
         <% for(var i=0; i<availableAttributes.length; i++) { %>
         <div class = "col-xs-6">
         <input type="checkbox" name = "<%= availableAttributes[i]%>" id="<%= availableAttributes[i]%>">
@@ -70,7 +74,7 @@
         </div>
         <% } %>
 
-        <div class=""form-group row id="whereLabel">
+        <div class="form-group row" id="whereLabel">
             <label>Select where conditons as needed</label>
         </div>
 
