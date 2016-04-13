@@ -24,3 +24,7 @@ td { border-left: solid; border-width: 1px 1px; padding: 10px; text-align: cente
   height: 100px;
 }
 
+#submitButton {
+  margin-left: 20px;
+}
+
