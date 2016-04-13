@@ -122,7 +122,7 @@ function sendFormData(data) {
             //$('#lblResponse').html(ret.msg);
 
             //table creation starts here
-            /*var json = [Your JSON here],
+            /*var json = ret,
                 table = document.createElement('table');
 
             for(var i = 0, il = json.length; i < il; ++i) {
@@ -130,20 +130,13 @@ function sendFormData(data) {
                 var row = document.createElement('tr'),
                     td;
 
-                //create the id column
-                td = document.createElement('td');
-                td.appendChild(document.createTextNode(value.id));
-                row.appendChild(td);
+                for (var key in json[i]) {
+                    td = document.createElement('td');
+                    td.appendChild(document.createTextNode(json[i][key]));
+                    row.appendChild(td);
+                }
 
-                //create name column
-                td = document.createElement('td');
-                td.appendChild(document.createTextNode(value.name));
-                row.appendChild(td);
 
-                //create last_name column
-                td = document.createElement('td');
-                td.appendChild(document.createTextNode(value.last_name));
-                row.appendChild(td);
 
                 table.appendChild(row);
             }
