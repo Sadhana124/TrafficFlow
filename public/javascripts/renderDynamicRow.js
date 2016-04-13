@@ -49,7 +49,7 @@ function addRow(frm) {
     return false;
 });*/
 
-$('#form_id').on('submit', function(e){
+/*$('#form_id').on('submit', function(e){
     e.preventDefault();
     $.ajax({
         type: 'POST',
@@ -60,39 +60,53 @@ $('#form_id').on('submit', function(e){
         }
     });
     return false;
-});
+});*/
 
 
 
 function sendFormData(data) {
+
+    var query = {}
     //document.write("reached js handler");
     //document.write(data);
-    alert("hi");
-    /*var x = document.getElementById("formContainer");
+    //alert("hi");
+    var x = document.getElementById("formContainer");
 
     var availableAttributes = ['Destination ip', 'Destination vn', 'Direction ingress',
         'Destination port', 'Protocol', 'Source ip', 'Source vn', 'Source port', 'Sum of bytes', 'Sum of packets'];
 
-    var from = document.getElementsByName("from");
-    var to = document.getElementsByName("to");
+    var from = document.getElementsByName("from")[0];
+    query["from"] = from.value;
+    var to = document.getElementsByName("to")[0];
+    query["to"] = to.value;
     var selectedAttrs = [];
     for (var i=0; i<availableAttributes.length; i++) {
-        selectedAttrs.push(document.getElementsByName(availableAttributes[i]));
-    }*/
+        if (document.getElementById(availableAttributes[i]).checked == true) {
+            selectedAttrs.push(document.getElementById(availableAttributes[i]).id);
+        }
+    }
+    query["selectedAtts"] = selectedAttrs;
 
-    $('#form_id').on('submit', function(e){
-        e.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: "/test",
-            data: $(this).serialize(),
-            success: function() {
-                alert('success');
-            }
-        });
-    });
+    var whereClauses = []
 
-    /*$.ajax({
+    for (var i=1; i<=2; i++) {
+        var whereClause = {}
+        var condAttr = document.getElementById("condAttr-"+i);
+        whereClause["condAttrt"] = condAttr.value;
+        var op = document.getElementById("op-"+i);
+        whereClause["op"] = op.value;
+        var condValue = document.getElementById("condValue-"+i);
+        whereClause["condValue"] = condValue.value;
+        var combiner = document.getElementById("combiner-"+i);
+        whereClause["combiner"] = combiner.value;
+
+        whereClauses.push(whereClause);
+    }
+
+    query["whereConditions"] = whereClauses;
+
+
+    $.ajax({
         type: 'POST', // added,
         url: '/test',
         data: '{"data": "TEST"}',
@@ -108,7 +122,7 @@ function sendFormData(data) {
             //console.log('Error: ' + error.message);
             //$('#lblResponse').html('Error connecting to the server.');
         }
-    });*/
+    });
 }
 
 
