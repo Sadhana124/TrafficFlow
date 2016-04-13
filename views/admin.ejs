@@ -3,47 +3,82 @@
 <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css">
 </head>
 <body>
-<h1><%= title </h1>
+<h1><%= title %></h1>
 
-<h1> Insert Data </h1>
+<label>Enter data or load the test data</label>
+
+<div class=container">
 
 <form action="/admin/insert" method="post">
-    TimeStamp <input type="text" name="timestmp">
-    </br>
-    DestinationIP <input type="text" name="dest_ip">
-    </br>
-    DestinationVN <input type="text" name="dest_vn">
-    </br>
-    DirectionIngress <input type="text" name="dir_ingress">
-    </br>
-    DestinationPort <input type="text" name="dest_port">
-    </br>
-    Protocol <input type="text" name="protocol">
-    </br>
-    SourceIP <input type="text" name="source_ip">
-    </br>
-    SourceVN <input type="text" name="source_vn">
-    </br>
-    SourcePort <input type="text" name="source_port">
-    </br>
-    SumBytesKB <input type="text" name="sum_bytes_kb">
-    </br>
-    SumPackets <input type="text" name="sum_packets">
-    </br>
-    <input type="submit">
+
+    <div class="row form-group">
+        <label for="timestamp">Timestamp</label>
+        <input type="text" name="timestmp" class="form-control">
+    </div>
+
+    <div class="row form-group">
+        <label for="dest_ip">Destination IP</label>
+        <input type="text" name="dest_ip" class="form-control">
+    </div>
+
+    <div class="row form-group">
+        <label for="dir_ingress">Direction Ingress</label>
+        <input type="text" name="dir_ingress" class="form-control">
+    </div>
+
+    <div class="row form-group">
+        <label for="dest_port">Destination port</label>
+        <input type="text" name="dest_port" class="form-control">
+    </div>
+
+    <div class="row form-group">
+        <label for="protocol">Protocol</label>
+        <input type="text" name="protocol" class="form-control">
+    </div>
+
+    <div class="row form-group">
+        <label for="source_ip">Source IP</label>
+        <input type="text" name="source_ip" class="form-control">
+    </div>
+
+    <div class="row form-group">
+        <label for="source_vn">Source VN</label>
+        <input type="text" name="source_vn" class="form-control">
+    </div>
+
+    <div class="row form-group">
+        <label for="source_port">Source port</label>
+        <input type="text" name="source_port" class="form-control">
+    </div>
+
+    <div class="row form-group">
+        <label for="sum_bytes_kb">Sum of bytes in kb</label>
+        <input type="text" name="sum_bytes_kb" class="form-control">
+    </div>
+
+    <div class="row form-group">
+        <label for="sum_packets">Sum of packets</label>
+        <input type="text" name="sum_packets" class="form-control">
+    </div>
+
+    <input type="submit" value="Add this row to table" class="btn btn-primary">
 </form>
 
-<h1> Clear Data </h1>
+
 <form action="/admin/clear" method="get">
-    <input type="submit">
+    <div class = "row form-group">
+        <input type="submit" value="Clear Data" class="btn btn-primary">
+    </div>
 </form>
 
-<h1> Load Test Data </h1>
 <form action="/admin/test" method="get">
-    <input type="submit">
+    <div class = "row form-group">
+        <input type="submit" value="Load test data" class="btn btn-primary">
+    </div>
 </form>
-
+</div>
 </body>
 </html>
