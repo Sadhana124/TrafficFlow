@@ -7,8 +7,8 @@ var sqlite3 = require('sqlite3').verbose();
 
 data = {
     title: 'Network FLow Query',
-    availableAttributes : ['Destination ip', 'Destination vn', 'Direction ingress',
-        'Destination port', 'Protocol', 'Source ip', 'Source vn', 'Source port', 'Sum of bytes', 'Sum of packets'],
+    availableAttributes : ['Destination_ip', 'Destination_vn', 'Direction_ingress',
+        'Destination_port', 'Protocol', 'Source_ip', 'Source_vn', 'Source_port', 'Sum_of_bytes', 'Sum_of_packets'],
     conditions : ['=', '!=', '<', '>', '<=', '>=', 'in', 'like']
 }
 
@@ -28,6 +28,19 @@ router.post('/query', function(req, res) {
     //Move into common method
     var file = "./test.db";
     var db = new sqlite3.Database(file);
+
+    var mapping = {};
+    mapping['Destination_ip']    = 'destination_ip';
+    mapping['Destination_vn']    = 'destination_vn';
+    mapping['Direction_ingress'] = 'direction_ingress';
+    mapping['Destination_port']  = 'destination_port';
+    mapping['Protocol']          = 'protocol';
+    mapping['Source_ip']         = 'source_ip';
+    mapping['Source_vn']         = 'source_vn';
+    mapping['Source_port']       = 'source_port';
+    mapping['Sum_of_bytes']      = 'sum_bytes_kb';
+    mapping['Sum_of_packets']    = 'sum_packets';
+
     db.serialize(function() {
         db.run("CREATE TABLE IF NOT EXISTS traffic (" +
             "ts INTEGER, " +
@@ -45,37 +58,29 @@ router.post('/query', function(req, res) {
     //Move into common method
 
     //TODO: Make query correctly
-
     var params = req.body;
-    var from = params['from'];
-    var to = params['to'];
 
-    delete params['from']; delete params['to'];
-
-    var select_fields = [];
-    for(var key in params) {
-        if(params.hasOwnProperty(key) && params[key] == 'on') {
-
-            select_fields.push(key);
-            delete params[key];
-        }
+    var query = 'SELECT ';
+    for (var i = 0; i < params['selectedAttr'].length; i++) {
+        params['selectedAttr'][i] = mapping[params['selectedAttr'][i]];
     }
 
-    var query = 'SELECT ' + select_fields.join() + " FROM traffic WHERE " + "ts > " + from + " AND ts < " + to;
+    if('selectedAttr' in params) {
+        query += params['selectedAttr'].join();
+    } else {
+        query += '*'
+    }
 
-    var index = 1;
-    while(true) {
-        var combiner = 'combiner-'+index;
-        var condAttr= 'condAttr-'+index;
-        var condValue = 'condValue-'+index;
-        var op = 'op-'+index;
+    query += " FROM traffic WHERE " + "ts > " + params['from'] + " AND ts < " + params['to'];
 
-        if (! (combiner in params)) {
-            break;
-        }
+    for (var i = 0; i < params['whereConditions'].length; i++) {
+        params['whereConditions'][i]['condAttr'] = mapping[params['whereConditions'][i]['condAttr']];
 
-        query += " " + params[combiner] + " " + params[condAttr] + " " + params[op] + " " + params[condValue];
-        index++;
+        query += " " +
+            params['whereConditions'][i]['combiner'] + " " +
+            params['whereConditions'][i]['condAttr'] + " " +
+            params['whereConditions'][i]['op'] + " " +
+            params['whereConditions'][i]['condValue'];
     }
 
     db.all(query, function(err, rows) {

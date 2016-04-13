@@ -72,8 +72,8 @@ function sendFormData(data) {
     //alert("hi");
     var x = document.getElementById("formContainer");
 
-    var availableAttributes = ['Destination ip', 'Destination vn', 'Direction ingress',
-        'Destination port', 'Protocol', 'Source ip', 'Source vn', 'Source port', 'Sum of bytes', 'Sum of packets'];
+    var availableAttributes = ['Destination_ip', 'Destination_vn', 'Direction_ingress',
+        'Destination_port', 'Protocol', 'Source_ip', 'Source_vn', 'Source_port', 'Sum_of_bytes', 'Sum_of_packets'];
 
     var from = document.getElementsByName("from")[0];
     query["from"] = from.value;
@@ -85,7 +85,7 @@ function sendFormData(data) {
             selectedAttrs.push(document.getElementById(availableAttributes[i]).id);
         }
     }
-    query["selectedAtts"] = selectedAttrs;
+    query["selectedAttr"] = selectedAttrs;
 
     var whereClauses = []
     var i=1;
@@ -95,7 +95,7 @@ function sendFormData(data) {
         if (condAttr == null) {
             break;
         }
-        whereClause["condAttrt"] = condAttr.value;
+        whereClause["condAttr"] = condAttr.value;
         var op = document.getElementById("op-"+i);
         whereClause["op"] = op.value;
         var condValue = document.getElementById("condValue-"+i);
@@ -114,12 +114,41 @@ function sendFormData(data) {
         type: 'POST', // added,
         url: '/query',
         data: query,
-//dataType: 'jsonp' - removed
+
 //jsonpCallback: 'callback' - removed
         success: function (data) {
             var ret = jQuery.parseJSON(data);
             alert(ret);
             //$('#lblResponse').html(ret.msg);
+
+            //table creation starts here
+            /*var json = [Your JSON here],
+                table = document.createElement('table');
+
+            for(var i = 0, il = json.length; i < il; ++i) {
+                //create row
+                var row = document.createElement('tr'),
+                    td;
+
+                //create the id column
+                td = document.createElement('td');
+                td.appendChild(document.createTextNode(value.id));
+                row.appendChild(td);
+
+                //create name column
+                td = document.createElement('td');
+                td.appendChild(document.createTextNode(value.name));
+                row.appendChild(td);
+
+                //create last_name column
+                td = document.createElement('td');
+                td.appendChild(document.createTextNode(value.last_name));
+                row.appendChild(td);
+
+                table.appendChild(row);
+            }
+
+            document.body.appendChild(table);*/
         },
         error: function (xhr, status, error) {
             alert("error");
@@ -129,7 +158,11 @@ function sendFormData(data) {
     });
 }
 
-/*var displayResult = function
+/*var displayResult = function() {
+    var self = this;
+    this.result =
+
+}
 
 $(document).ready(function () {
 

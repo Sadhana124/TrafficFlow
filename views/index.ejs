@@ -6,6 +6,8 @@
     <script type="text/javascript" src="/scripts/knockout-3.4.0.js" ></script>
     <script type="text/javascript" src="/scripts/jquery-1.12.3.min.js"></script>
       <script type="text/javascript" src="/scripts/renderDynamicRow.js"></script>
+      <script src="/scripts/jQueryDateTimePicker/jquery.js"></script>
+      <script src="/scripts/jQueryDateTimePicker/build/jquery.datetimepicker.full.js"></script>
 
 
       <script>
@@ -68,6 +70,10 @@
 
       <form action="/query" method="post" id="form_id">
     <div class="container" id="formContainer">
+
+
+
+
         <div class = "row form-group">
           <div class="col-xs-6">
             <label for="from">From:</label>
@@ -163,6 +169,8 @@
   <div>
       <input type="text" data-bind="value:queryResult">
   </div>
+
+
 
   </body>
 </html>
