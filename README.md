@@ -15,7 +15,7 @@
 
 #####Instructions for Linux
 
-1. Make changes to package.json to add "sqlite3": “~2.2.3" to the dependencies. I have already added this but this check in was made 4/13/16 after 12pm(which was the deadline)
+1. Make changes to package.json to add "sqlite3": “~2.2.3" to the dependencies. I have already added this but this check in was made 4/13/16 after 12pm
 2. cd into TrafficFlow and do npm install 
 3. Proceed with step 1-8 as given for MAC
 
