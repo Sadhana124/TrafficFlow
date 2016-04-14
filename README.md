@@ -5,7 +5,7 @@
 #####Instructions for MAC
 
 1. git clone https://github.com/Sadhana124/TrafficFlow.git
-2. cd TrafficFlow node bin/www
+2. cd to TrafficFlow and run node bin/www
 3. The backend server will be up, open your favorite browser and go to url localhost:3000
 4. The database is already populated with some data (one valid timestamp range: July 1, 1967 to April 1 1970)
 5. Click on the button “Add where condition” to add a condition (one valid condition: Destination_ip = 10.2.1.3)
