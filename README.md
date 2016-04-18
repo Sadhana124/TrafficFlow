@@ -8,8 +8,8 @@
 2. cd to TrafficFlow and run node bin/www
 3. The backend server will be up, open your favorite browser and go to url localhost:3000
 4. The database is already populated with some data (one valid timestamp range: July 1, 1967 to April 1 1970)
-5. Click on the button “Add where condition” to add a condition (one valid condition: Destination_ip = 10.2.1.3)
-6. To add more rows, click the “Add where condition” button(one valid condition: Destination_ip = “10.2.1.3” AND Sum_of_packets > 5). The condition that will be applied two where clauses is the “OR” or “AND” selected from the dropdown(the last row’s “OR” or “AND” will be ignored)
+5. Click on the button “Add where condition” to add a condition (one valid condition: Destination_ip = "10.2.1.3")
+6. To add more rows, click the “Add where condition” button(one valid condition: Destination_ip = “10.2.1.3” AND Sum_of_packets > 5). The condition that will be applied two where clauses is the “OR” or “AND” selected from the dropdown(the "AND" and "OR" will be used to combine to the previous condition)
 7. To clear all the where condition use the “Clear where conditions” button.
 8. To enter additional values into the database you can use localhost:3000/admin (caution: there is no validation on the data being entered since this was created only to aid in testing). This page also provides an option to clear all the database data using “Clear Data” button.
 
