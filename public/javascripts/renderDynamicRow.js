@@ -15,6 +15,7 @@ function clearAllWhereConditions() {
     while (myNode.firstChild) {
         myNode.removeChild(myNode.firstChild);
     }
+    rowNum = 0;
 }
 
 function validate() {
